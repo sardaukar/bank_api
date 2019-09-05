@@ -36,20 +36,20 @@ defmodule BankAPI.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.6"},
-      {:phoenix_pubsub, "~> 1.1.2"},
-      {:phoenix_ecto, "~> 4.0"},
+      {:commanded, "~> 0.18"},
+      {:commanded_ecto_projections, "~> 0.8"},
+      {:commanded_eventstore_adapter, "~> 0.5", runtime: Mix.env() != :test},
+      {:credo, "~> 1.0"},
       {:ecto_sql, ">= 3.1.2"},
-      {:postgrex, ">= 0.14.3"},
+      {:eventstore, "~> 0.16.2", runtime: Mix.env() != :test},
       {:gettext, "~> 0.14"},
       {:jason, "~> 1.1"},
+      {:phoenix, "~> 1.4.6"},
+      {:phoenix_ecto, "~> 4.0"},
+      {:phoenix_pubsub, "~> 1.1.2"},
       {:plug_cowboy, "~> 2.0"},
-      {:commanded, "~> 0.18"},
-      {:eventstore, "~> 0.16.2", runtime: Mix.env() != :test},
-      {:commanded_eventstore_adapter, "~> 0.5", runtime: Mix.env() != :test},
-      {:commanded_ecto_projections, "~> 0.8"},
-      {:skooma, "~> 0.2.0"},
-      {:credo, "~> 1.0"}
+      {:postgrex, ">= 0.14.3"},
+      {:skooma, "~> 0.2.0"}
     ]
   end
 
